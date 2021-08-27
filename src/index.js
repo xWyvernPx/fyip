@@ -3,7 +3,8 @@ const hanldebars = require('express-handlebars');
 const morgan = require('morgan');
 const path = require('path');
 const route = require('./route/index.route');
-
+const db = require('./config/db');
+db.connect();
 const app = express();
 const port = 3000;
 //#region set up app
@@ -18,5 +19,5 @@ app.set('views', path.join(__dirname, 'resources/views'));
 route(app);
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+    console.log(`App listening at http://localhost:${port}`);
 });

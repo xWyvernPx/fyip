@@ -5,14 +5,8 @@ const route = (app) => {
     //         res.render('search');
     //         console.log(req.query);
     //     });
-    app.post('/search', (req, res) => {
-        console.log(req.body);
-        res.render('test',
-            {
-                person: req.body
-            })
-    })
     app.use('/search', searchRoute);
+
     app.get('/', (req, res) => {
 
         res.render('main');
