@@ -1,0 +1,33 @@
+<div class="create-container">
+    <div class="create-menu"></div>
+    <h1 class="create-quote">What do you think today, huh ?</h1>
+    <form class="create-form" method="POST" action="/blogs/create">
+        <div class="create-title">
+
+            <input type="text" name="title" class="input-title" placeholder="Title...">
+        </div>
+        <div class="create-subtitle">
+
+            <input type="text" name="subtitle" class="input-subtitle" placeholder="Subtitle ...">
+        </div>
+        <div class="create-content">
+
+            <textarea class="input-content" name="content" onkeyup="textAreaAdjust(this)"
+                placeholder="Content..."></textarea>
+        </div>
+        <div class="create-thumbnail">
+
+            <input type="url" class="input-url" name="imageUrl" placeholder="Url">
+        </div>
+        <div class="create-submit">
+            <button type="submit">That's okay. Let create!</button>
+        </div>
+        <script>
+            function textAreaAdjust(element) {
+                element.style.height = "1px";
+                element.style.height = (25 + element.scrollHeight) + "px";
+            }
+
+        </script>
+    </form>
+</div>

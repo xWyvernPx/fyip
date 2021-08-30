@@ -9,7 +9,7 @@ const config = (paras) => {
     app.use(express.static(path.join([rootPath, "\\public"].join(''))));
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
-    app.use(morgan('combined'));
+    // app.use(morgan('combined'));
     app.engine('handlebars', hanldebars());
     app.set("view engine", 'handlebars');
     app.set('views', [rootPath, "\\resources\\views"].join(''));
