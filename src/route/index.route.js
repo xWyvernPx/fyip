@@ -9,6 +9,9 @@ const route = (app) => {
     app.use('/search', searchRoute);
     app.use('/blogs', blogRoute);
 
+    app.get('/about', (req, res) => {
+        res.render('blog/about');
+    })
     app.get('/', (req, res) => {
 
         res.render('main');
