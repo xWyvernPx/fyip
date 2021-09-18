@@ -11,7 +11,7 @@ body {
   margin: 1rem auto;
   box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
   margin-bottom: 1.6%;
-  background: #fff;
+  background: #f0f3bd;
   line-height: 1.4;
   font-family: sans-serif;
   border-radius: 5px;
@@ -20,7 +20,7 @@ body {
   .blog-card a {
     color: inherit; }
     .blog-card a:hover {
-      color: #5ad67d; }
+      color: #666867; }
   .blog-card:hover .photo {
     transform: scale(1.3) rotate(3deg); }
   .blog-card .meta {
@@ -49,7 +49,7 @@ body {
     margin: auto;
     transition: left 0.2s;
     background: rgba(0, 0, 0, 0.6);
-    color: #fff;
+    color: #f0f3bd;
     padding: 10px;
     width: 100%;
     font-size: 0.9rem; }
@@ -75,7 +75,7 @@ body {
         margin-left: -4px; }
   .blog-card .description {
     padding: 1rem;
-    background: #fff;
+    background: #f0f3bd;
     position: relative;
     z-index: 1; }
     .blog-card .description h1,
@@ -95,7 +95,7 @@ body {
       text-align: right; }
       .blog-card .description .read-more a {
         text-decoration: none;
-        color: #5ad67d;
+        color: #666867;
         display: inline-block;
         position: relative; }
         .blog-card .description .read-more a:after {
@@ -117,7 +117,7 @@ body {
         content: "";
         position: absolute;
         height: 5px;
-        background: #5ad67d;
+        background: #666867;
         width: 35px;
         top: -0.75rem;
         border-radius: 3px; }
@@ -135,7 +135,7 @@ body {
         .blog-card .description:before {
           transform: skewX(-3deg);
           content: "";
-          background: #fff;
+          background: #f0f3bd;
           width: 30px;
           position: absolute;
           left: -10px;
@@ -171,6 +171,11 @@ body {
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical; }
+
+.blog-container {
+  background-color: #f0ede6;
+  padding-top: 30px;
+  margin-top: -10px; }
 
 .create-container {
   background-color: rgba(0, 0, 0, 0.75);
@@ -372,12 +377,19 @@ body {
   white-space: pre-wrap;
   margin: 20px 70px; }
 
+.about-page {
+  width: 100%;
+  height: 100%;
+  margin-top: -30px;
+  background-color: #f0ede6;
+  padding-bottom: 50px; }
+
 .about-layout {
   background-color: rgba(0, 0, 0, 0.9);
   width: 45vw;
   height: 100%;
   border-radius: 10px;
-  padding: 0px , 40px;
+  padding: 0px, 40px;
   margin-top: 50px;
   display: inline-block;
   position: relative;
@@ -403,7 +415,7 @@ body {
   margin: 50px; }
 
 .about-title {
-  margin-top: 50px;
+  margin-top: 15%;
   font-family: "Bebas Neue";
   display: inline-block;
   position: relative;

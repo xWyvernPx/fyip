@@ -1,5 +1,6 @@
 const searchRoute = require("./search.route");
 const blogRoute = require("./blog.route");
+const podcastRoute = require("./podcast.route");
 
 const route = (app) => {
     // app.get('/search', (req, res) => {
@@ -8,6 +9,7 @@ const route = (app) => {
     //     });
     app.use('/search', searchRoute);
     app.use('/blogs', blogRoute);
+    app.use('/podcast', podcastRoute);
 
     app.get('/about', (req, res) => {
         res.render('blog/about');

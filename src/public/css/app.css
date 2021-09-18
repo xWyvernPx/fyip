@@ -1,4 +1,5 @@
 header {
+  border-bottom: #000000 1.5px solid;
   position: fixed;
   z-index: +10;
   top: 0;
@@ -99,23 +100,142 @@ header {
 .root {
   padding-top: 92px; }
 
-footer {
+.footer {
   position: absolute;
-  margin-left: 50%;
-  transform: translate(-50%, -50%);
-  bottom: 0; }
+  width: auto;
+  height: auto;
+  top: 100px;
+  right: 50px; }
+  .footer a {
+    color: inherit; }
+  .footer h1,
+  .footer h2,
+  .footer h3,
+  .footer h4 {
+    margin: 0;
+    margin-bottom: 10px;
+    margin-top: 10px; }
+  .footer h1 {
+    font-size: 3em; }
+  .footer .menu {
+    filter: url("#shadowed-goo"); }
+  .footer .menu-item, .footer .menu-open-button {
+    background: #ff4081;
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    margin-left: -40px;
+    position: absolute;
+    top: 20px;
+    color: white;
+    text-align: center;
+    line-height: 80px;
+    transform: translate3d(0, 0, 0);
+    transition: transform ease-out 200ms; }
+  .footer .menu-open {
+    display: none; }
+  .footer .hamburger {
+    width: 25px;
+    height: 3px;
+    background: white;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12.5px;
+    margin-top: -1.5px;
+    transition: transform 200ms; }
+  .footer .hamburger-1 {
+    transform: translate3d(0, -8px, 0); }
+  .footer .hamburger-2 {
+    transform: translate3d(0, 0, 0); }
+  .footer .hamburger-3 {
+    transform: translate3d(0, 8px, 0); }
+  .footer .menu-open:checked + .menu-open-button .hamburger-1 {
+    transform: translate3d(0, 0, 0) rotate(45deg); }
+  .footer .menu-open:checked + .menu-open-button .hamburger-2 {
+    transform: translate3d(0, 0, 0) scale(0.1, 1); }
+  .footer .menu-open:checked + .menu-open-button .hamburger-3 {
+    transform: translate3d(0, 0, 0) rotate(-45deg); }
+  .footer .menu {
+    position: absolute;
+    left: 50%;
+    margin-left: -190px;
+    padding-top: 20px;
+    padding-left: 190px;
+    width: 380px;
+    height: 250px;
+    box-sizing: border-box;
+    font-size: 20px;
+    text-align: left; }
+  .footer .menu-item:hover {
+    background: white;
+    color: #ff4081; }
+  .footer .menu-item:nth-child(3) {
+    transition-duration: 70ms; }
+  .footer .menu-item:nth-child(4) {
+    transition-duration: 130ms; }
+  .footer .menu-item:nth-child(5) {
+    transition-duration: 190ms; }
+  .footer .menu-item:nth-child(6) {
+    transition-duration: 250ms; }
+  .footer .menu-item:nth-child(7) {
+    transition-duration: 310ms; }
+  .footer .menu-open-button {
+    z-index: 2;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-duration: 400ms;
+    transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+    cursor: pointer; }
+  .footer .menu-open-button:hover {
+    transform: scale(1.2, 1.2) translate3d(0, 0, 0); }
+  .footer .menu-open:checked + .menu-open-button {
+    transition-timing-function: linear;
+    transition-duration: 200ms;
+    transform: scale(0.8, 0.8) translate3d(0, 0, 0); }
+  .footer .menu-open:checked ~ .menu-item {
+    transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33); }
+    .footer .menu-open:checked ~ .menu-item:nth-child(3) {
+      transition-duration: 160ms;
+      transform: translate3d(114.42548px, 11.48084px, 0); }
+    .footer .menu-open:checked ~ .menu-item:nth-child(4) {
+      transition-duration: 240ms;
+      transform: translate3d(77.18543px, 85.2491px, 0); }
+    .footer .menu-open:checked ~ .menu-item:nth-child(5) {
+      transition-duration: 320ms;
+      transform: translate3d(0.09158px, 114.99996px, 0); }
+    .footer .menu-open:checked ~ .menu-item:nth-child(6) {
+      transition-duration: 400ms;
+      transform: translate3d(-77.04956px, 85.37192px, 0); }
+    .footer .menu-open:checked ~ .menu-item:nth-child(7) {
+      transition-duration: 480ms;
+      transform: translate3d(-114.40705px, 11.66307px, 0); }
 
 .app {
   position: relative;
   width: 100vw;
-  height: 6000px;
-  min-height: 3000px;
-  max-height: 10000px;
-  background-image: url("https://images.pexels.com/photos/1903702/pexels-photo-1903702.jpeg?cs=srgb&dl=pexels-roberto-shumski-1903702.jpg&fm=jpg");
+  height: auto;
+  min-height: auto;
+  max-height: auto;
   background-repeat: no-repeat;
-  background-size: 1920px 1291.78px fixed;
+  background-size: cover;
   background-attachment: fixed;
   background-position: center; }
 
 body {
   overflow-x: hidden; }
+  body::-webkit-scrollbar {
+    width: 8px;
+    height: 8px; }
+  body::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc; }
+  body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(left, #fff, #e4e4e4);
+    border: 1px solid #aaa; }
+  body::-webkit-scrollbar-thumb:hover {
+    background: #fff; }
+  body::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(left, #22add4, #1e98ba); }

@@ -8,8 +8,9 @@ body {
   background: #f1f1f1;
 }
 
-$color_white: #fff;
-$color_prime: #5ad67d;
+$color_white: #ffd5c2;
+$color_white: #f0f3bd;
+$color_prime: #666867;
 $color_grey: #e2e2e2;
 $color_grey_dark: #a2a2a2;
 
@@ -180,7 +181,7 @@ $color_grey_dark: #a2a2a2;
       &:before {
         transform: skewX(-3deg);
         content: "";
-        background: #fff;
+        background: $color_white;
         width: 30px;
         position: absolute;
         left: -10px;
@@ -204,6 +205,7 @@ $color_grey_dark: #a2a2a2;
     }
   }
 }
+
 #blog-title {
   font-family: Montserrat;
   font-weight: 600;
@@ -224,6 +226,11 @@ $color_grey_dark: #a2a2a2;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+}
+.blog-container {
+  background-color: rgb(240, 237, 230);
+  padding-top: 30px;
+  margin-top: -10px;
 }
 .create-container {
   background-color: rgba($color: #000000, $alpha: 0.75);
@@ -494,13 +501,20 @@ $color_grey_dark: #a2a2a2;
 //===============================ABOUT SITE=====================================//
 $about-height: 700px;
 .about {
+  &-page {
+    width: 100%;
+    height: 100%;
+    margin-top: -30px;
+    background-color: rgb(240, 237, 230);
+    padding-bottom: 50px;
+  }
   &-layout {
     background-color: rgba($color: #000, $alpha: 0.9);
 
     width: 45vw;
     height: 100%; // auto sau
     border-radius: 10px;
-    padding: 0px , 40px;
+    padding: 0px, 40px;
     margin-top: 50px;
 
     display: inline-block;
@@ -510,6 +524,7 @@ $about-height: 700px;
   }
   &-border {
     width: 41vw;
+
     height: 90%;
     border: #fff 3px;
     box-shadow: none;
@@ -530,7 +545,7 @@ $about-height: 700px;
     margin: 50px;
   }
   &-title {
-    margin-top: 50px;
+    margin-top: 15%;
     font-family: "Bebas Neue";
     display: inline-block;
     position: relative;
