@@ -498,18 +498,19 @@ $about-height: 700px;
     background-color: rgba($color: #000, $alpha: 0.9);
 
     width: 45vw;
-    height: $about-height; // auto sau
+    height: 100%; // auto sau
     border-radius: 10px;
-    padding-bottom: 0px;
+    padding: 0px , 40px;
+    margin-top: 50px;
 
-    position: absolute;
-    top: 125px;
+    display: inline-block;
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
   }
   &-border {
     width: 41vw;
-    height: $about-height - 80px;
+    height: 90%;
     border: #fff 3px;
     box-shadow: none;
     border-style: solid;
@@ -526,9 +527,10 @@ $about-height: 700px;
     font-size: 2rem;
     text-align: justify;
     color: #e2e2e2;
-    margin: 25px;
+    margin: 50px;
   }
   &-title {
+    margin-top: 50px;
     font-family: "Bebas Neue";
     display: inline-block;
     position: relative;
@@ -543,6 +545,9 @@ $about-height: 700px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    padding-bottom: 75px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 }
 #social-test {
