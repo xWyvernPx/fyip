@@ -1,0 +1,198 @@
+<div class="radio2-page">
+    <section id="home">
+        <div class="container">
+            <div class="collection">
+                <h1 class="heading">Chillhop Radio</h1>
+                <p class="lead">Chill-out is a loosely defined form of popular music characterized by slow tempos and
+                    relaxed moods. Identified as a modern type of easy listening.</p>
+                <hr class="hor">
+                <div id="musicbox" class="musicbox">
+                    <h2>Chillhop Playlist</h2>
+                </div>
+            </div>
+
+            <div class="playbox">
+
+                <h1 class="heading">Chillhop Radio Player</h1>
+                <div class="controller">
+                    <div id="circle-bg" class="circle">
+                        <div id="circle-sm" class="circle2"><img id="cover" src="/img/chillhop.jpg" class="fluid-img">
+                        </div>
+                    </div>
+                    <div class="songs">
+                        <h2 id="song-name">Travel love Beats</h2>
+                        <div class="controls">
+                            <audio id="audio" src=""></audio>
+                            <img id="backward" class="media-btn" src="/img/backward-button.png">
+                            <img id="play-stop" class="media-btn">
+                            <img id="forward" class="media-btn" src="/img/fast-forward.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</div>
+<script>// media controllers
+    const playPause = document.querySelector("#play-stop");
+    const backward = document.querySelector("#backward");
+    const forward = document.querySelector("#forward");
+
+    // record player animation
+    const circleBig = document.querySelector("#circle-bg");
+    const circleSm = document.querySelector("#circle-sm");
+
+    // playing song
+    const songName = document.querySelector("#song-name");
+    const audio = document.querySelector("#audio");
+    const coverArt = document.querySelector("#cover");
+    const musicbox = document.querySelector("#musicbox");
+
+    // control button images
+    let playImg = "/img/play.svg";
+    let pauseImg = "/img/pause.svg";
+
+    // default controls
+    playPause.src = playImg;
+    let isPlaying = true;
+
+    const songList = [
+        {
+            name: "Travel Love Beats",
+            source: "https://x2convert.com/vi/Thankyou?token=U2FsdGVkX18I4efexwtWlfowsZvNWGS8IXOSFY0rznYTx0zJKeblFpV0lV7jBDzH5Q8fnSaGEo%2fRdFavK2%2b%2bt1eoycyXNbAtsFccyrVsf8xBp2ID4zza5QQIps3l7iJEIkQXA5TtPb20lqzZOz9IMUehegIo3lODK1Z7d%2fCetzQSsYOLLRT3Lt3JO3QuUOc2GlUd21vPCjrxEeJCcQZwzfUFFFB%2bzzi%2f6WyTsEYUQD1YGQ3%2bwTBsgZ2mBubX0%2fX4&s=youtube&id=&h=8654374230731284455",
+            cover: "./assets/images/chillhop.jpg"
+        },
+        {
+            name: "Night Sky Unreated",
+            source: "./assets/music/Night Sky.mp3",
+            cover: "./assets/images/chillhop-2.jpg"
+        },
+        {
+            name: "Be a Music",
+            source: "./assets/music/Be a Music.mp3",
+            cover: "./assets/images/chillhop-3.jpg"
+        },
+        {
+            name: "Slow Day",
+            source: "./assets/music/Slow Day.mp3",
+            cover: "./assets/images/chillhop-4.jpg"
+        },
+        {
+            name: "Carti Mangolia",
+            source: "./assets/music/Carti mangolia.mp3",
+            cover: "./assets/images/chillhop-2.jpg"
+        },
+        {
+            name: "Travel Love Beats",
+            source: "./assets/music/Travel Love Beats.mp3",
+            cover: "./assets/images/chillhop.jpg"
+        },
+        {
+            name: "Night Sky Unreated",
+            source: "./assets/music/Night Sky.mp3",
+            cover: "./assets/images/chillhop-2.jpg"
+        },
+        {
+            name: "Be a Music",
+            source: "./assets/music/Be a Music.mp3",
+            cover: "./assets/images/chillhop-3.jpg"
+        },
+        {
+            name: "Slow Day",
+            source: "./assets/music/Slow Day.mp3",
+            cover: "./assets/images/chillhop-4.jpg"
+        },
+        {
+            name: "Carti Mangolia",
+            source: "./assets/music/Carti mangolia.mp3",
+            cover: "./assets/images/chillhop-2.jpg"
+        }
+    ];
+    // helper function
+    function createEle(ele) {
+        return document.createElement(ele);
+    }
+    function append(parent, child) {
+        return parent.append(child);
+    }
+    // creating track list
+    const ul = createEle('ul')
+    function createPlayList() {
+        songList.forEach((song) => {
+            let h3 = createEle('h3');
+            let li = createEle('li');
+
+            li.classList.add("track-item");
+            h3.innerText = song.name;
+            li.onClick = () => { loadMusic2(song); }
+            li.cursor = 'pointer';
+            append(li, h3);
+            append(ul, li)
+        })
+        append(musicbox, ul);
+    }
+
+    let songIndex = 0;
+    // preloaded song
+    loadMusic(songList[songIndex]);
+
+
+    function loadMusic2(song) {
+        songName.innerText = song.name;
+        audio.src = song.source;
+    }
+
+    function loadMusic() {
+        songName.innerText = songList[songIndex].name;
+        audio.src = songList[songIndex].source;
+    }
+
+    function playSong() {
+        playPause.src = pauseImg;
+        circleBig.classList.add("animate");
+        circleSm.classList.add("animate");
+
+        audio.play();
+    }
+
+    function pauseSong() {
+        playPause.src = playImg;
+        circleBig.classList.remove("animate");
+        circleSm.classList.remove("animate");
+
+        audio.pause();
+    }
+
+    function nextPlay() {
+        songIndex++;
+        if (songIndex > songList.length - 1) {
+            songIndex = 0;
+        }
+        loadMusic(songList[songIndex]);
+        playSong()
+    }
+
+    function backPlay() {
+        songIndex--;
+        if (songIndex < 0) {
+            songIndex = songList.length - 1;
+        }
+        loadMusic(songList[songIndex]);
+        playSong()
+    }
+    function playHandler() {
+        isPlaying = !isPlaying;
+        //console.log("Change: ",isPlaying)
+        isPlaying ? pauseSong() : playSong();
+    }
+
+
+    // player event 
+    playPause.addEventListener("click", playHandler);
+    backward.addEventListener("click", backPlay);
+    forward.addEventListener("click", nextPlay);
+
+    createPlayList()
+</script>

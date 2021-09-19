@@ -4,8 +4,7 @@ header {
   z-index: +10;
   top: 0;
   left: 0;
-  width: 100vw;
-  transform: translate(-10px, -10px); }
+  width: 100vw; }
   header h1 {
     background-color: black;
     color: #fff; }

@@ -1,6 +1,5 @@
-const { findById } = require('../Modules/blog.module');
-const Blog = require('../Modules/blog.module');
-class BlogController {
+
+class PodcastController {
     //[GET] ,search main page
     index(req, res) {
         res.render('podcast/podcast');
@@ -8,4 +7,4 @@ class BlogController {
     }
 
 }
-module.exports = new BlogController;
+module.exports = new PodcastController;
