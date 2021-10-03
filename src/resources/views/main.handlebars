@@ -1,1 +1,189 @@
-<h1>This is WyvernP blog </h1>
+ <link rel="stylesheet" href="css/font-awesome.min.css"> <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/wow-animate.css"> <!-- Wow Animate -->
+
+<div class="main-page">
+<div class="parallax">
+
+
+      <div class="bg__first templatemo-position-relative">
+        <div class="container">
+          <div class="templatemo-flexbox">
+            <span class="first-title">Em Rầu 1001</span>   
+        <div class="first-illustration">
+              <img src="/img/landing/landing-obj1.png" id="first-obj1" height="700" width="700" alt="">
+          </div>   
+          </div>          
+          
+        </div>
+       
+      </div>
+
+
+        <div id="second-section"> 
+            <div class="bg__second"> 
+               <div id="fourth-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-md-offset-8 col-sm-6 col-xs-10 col-xs-offset-1 wow animated fadeInLeft">
+                <div class="left-text">
+                  <h2>Podcast </h2>
+                  <div class="line"></div>
+                  <p>Donec suscipit hendrerit euismod. Ut at nisl sem. Praesent ac efficitur mi. Sed fermentum iaculis accumsan. Mauris rutrum dignissim eros id finibus sed turpis in diam mollis lobortis. <br><br>Phasellus tincidunt leo ante, quis convallis lectus pretium vel. Ut blandit, est eget feugiat laoreet, magna nisi volutpat ligula, commodo efficitur metus magna vel sapien.</p>                  
+                  <div class="button">
+                    <a href="/podcast">Listen to out podcast</a>
+                  </div>                  
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+             
+            </div>
+          </div>
+        </div>
+            </div>
+       
+      
+        
+            
+        
+        
+        </div>
+     
+
+
+      <div class="bg__third">
+        <div id="third-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-sm-6 col-xs-10 wow animated fadeInLeft">
+                <div class="left-text">
+                  <h2>Blog Feed</h2>
+                  <div class="line"></div>
+                  <p></p>
+                  <div class="button">
+                    <a href="/blogs">Read Blogs</a>
+                  </div>                  
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 templatemo-position-relative">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="bg__fourth">
+        <div class="counter"><!-- hitwebcounter Code START -->
+      <a href="https://www.hitwebcounter.com" target="_blank">
+      <img src="https://hitwebcounter.com/counter/counter.php?page=7876437&style=0006&nbdigits=4&type=page&initCount=0" title="Free Counter" Alt="web counter"   border="0" /></a>     </div>
+      </div>
+     
+
+     
+
+      
+
+    </div>   
+    </div>
+        <script src="js/vendor/jquery-1.11.1.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/wow-animate.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // wow
+        new WOW ({
+          animateClass: 'animated',
+          offset:       100
+        }).init();
+    </script>
+   
+   {{!-- ////////////////////////////////// --}}
+   <script>
+    let b = document.body;
+    let a = document.querySelector("#audio");
+
+
+    let radio = document.querySelector("#radio")
+    let playert = document.querySelector("#playert")
+    let disc = document.querySelector("#disc")
+    let control = document.querySelector("#control")
+    let needle = document.querySelector("#needle")
+    let shadows = document.querySelector("#shadows")
+    let shadowsb = document.querySelector("#shadowsb")
+    let shadowsc = document.querySelector("#shadowsc")
+    let text = document.querySelector("#text")
+
+    let sca = document.querySelectorAll(".speaker-ca");
+    let scb = document.querySelectorAll(".speaker-cb");
+
+
+    let sfa = document.querySelectorAll(".speaker__front");
+    let sta = document.querySelectorAll(".speaker__top");
+    let sba = document.querySelectorAll(".speaker__back");
+    let sla = document.querySelectorAll(".speaker__left");
+    let sra = document.querySelectorAll(".speaker__right");
+
+    /*******************/
+
+    let tf = () => {
+        radio.classList.toggle('is-radio-active')
+        playert.classList.toggle('is-playert-active')
+        disc.classList.toggle('is-disc-active')
+        control.classList.toggle('is-control-active')
+        needle.classList.toggle('is-needle-active')
+        shadows.classList.toggle('is-shadows-active')
+        shadowsb.classList.toggle('is-shadowsb-active')
+        shadowsc.classList.toggle('is-shadowsc-active')
+
+        sca.forEach(f => f.classList.toggle("is-sca-active"));
+        scb.forEach(f => f.classList.toggle("is-scb-active"));
+
+
+        sfa.forEach(f => f.classList.toggle("sfa"));
+        sta.forEach(f => f.classList.toggle("sta"));
+        sba.forEach(f => f.classList.toggle("sba"));
+        sla.forEach(f => f.classList.toggle("sla"));
+        sra.forEach(f => f.classList.toggle("sra"));
+    }
+
+    let af = () => {
+        a.loop = true;
+
+        if (a.paused) a.play();
+        else {
+            a.pause();
+            a.currentTime = 0;
+        }
+
+    }
+
+
+    let radioPlaying = () => {
+        b.removeEventListener("click", radioPlaying)
+        text.classList.toggle('is-text-active')
+        tf()
+
+        setTimeout(function () {
+            af()
+        }, 1000);
+
+        setTimeout(function () {
+            tf()
+            af()
+        }, 100000);
+        setTimeout(function () {
+            text.classList.toggle('is-text-active')
+            b.addEventListener("click", radioPlaying)
+        }, 100000);
+
+
+    }
+
+    /*******************/
+    b.addEventListener("click", radioPlaying)
+
+</script>

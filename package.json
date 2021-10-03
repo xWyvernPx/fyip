@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/xWyvernPx/node-be-learning#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.3",
     "mongoose": "^6.0.2",

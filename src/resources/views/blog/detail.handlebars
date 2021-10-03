@@ -1,12 +1,22 @@
-<div class="detail-container" on>
-    <div class="detail-menu">
+<div class="detail-container">
+
+    {{!-- <div class="detail-menu">
         <form action="/blogs/delete/{{this._id}}" method="POST"><button type="submit">Delete</button></form>
         <form action="/blogs/edit/{{this._id}}" method="GET"><button type="submit">Edit</button></form>
-    </div>
+    </div> --}}
     <div class="detail-layout">
-        <h1 class="detail-title">{{this.title}}</h1>
-        <h3 class="detail-subtitle">{{this.subtitle}}</h3>
-        <img src="{{this.imageUrl}}" alt="" class="detail-thumbnail">
-        <span class="detail-content">{{this.content}}</span>
+
+        <div class="background"></div>
+        <div class="paper">
+            <div class="detail-content">
+                <img src="{{this.imageUrl}}" alt="" class="detail-thumbnail">
+                <h1 class="detail-title"><strong>{{this.title}}</strong></h1>
+                <div id="detail-subtitle">
+                    <h4 class="">{{this.subtitle}}</h4>
+                </div>
+                <span class="detail-writting">{{this.content}}</span>
+            </div>
+        </div>
+
     </div>
 </div>
